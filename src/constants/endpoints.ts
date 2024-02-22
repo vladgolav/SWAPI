@@ -1,0 +1,1 @@
+export const getList = (page: number): string => `people/?page=${page}`;
