@@ -6,10 +6,12 @@ import styles from './styles';
 
 type IContainer = {
   children: React.ReactNode;
-  containerStyle?: ViewStyle | {}
+  containerStyle?: ViewStyle | object
 }
 
-const Container: React.FC<IContainer & SafeAreaViewProps> = ({ children, edges, containerStyle }) => {
+const Container: React.FC<IContainer & SafeAreaViewProps> = ({
+  children, edges, containerStyle
+}) => {
   return (
     <SafeAreaView edges={edges} style={[styles.container, containerStyle]}>
       {children}

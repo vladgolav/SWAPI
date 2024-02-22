@@ -8,10 +8,11 @@ import styles from './styles';
 
 const Loader = () => {
   if (true) return null;
-  
   return (
     <View style={styles.container}>
-      <ActivityIndicator color={COLORS.lightBlack} size={Platform.OS === 'android' ? moderateScale(25) : 'large'} />
+      <ActivityIndicator
+        color={COLORS.lightBlack}
+        size={Platform.OS === 'android' ? moderateScale(25) : 'large'} />
     </View>
   );
 };

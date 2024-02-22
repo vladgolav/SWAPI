@@ -7,7 +7,7 @@ import styles from './styles';
 
 interface ICharacterScreen {
   goBack: () => void;
-};
+}
 
 const CharacterScreen: React.FC<ICharacterScreen> = ({ goBack }) => {
   return (

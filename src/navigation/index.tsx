@@ -11,7 +11,7 @@ const optionsWithoutHeader = {
   header: () => null
 };
 
-export default () => (
+const RootNavigation = () => (
   <NavigationContainer
   >
     <MainStack.Navigator initialRouteName='List'>
@@ -20,3 +20,5 @@ export default () => (
     </MainStack.Navigator>
   </NavigationContainer>
 );
+
+export default RootNavigation;

@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import RootNavigation from 'src/navigation';
 import Loader from './components/Loader';
 
-export default () => {
+const Root = () => {
   useEffect(() => {
     if (Platform.OS === 'android') {
       if (UIManager.setLayoutAnimationEnabledExperimental) {
@@ -21,3 +21,5 @@ export default () => {
     </>
   );
 };
+
+export default Root;

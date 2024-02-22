@@ -7,7 +7,7 @@ import styles from './styles';
 
 interface IListScreen {
   goToCharacter: () => void;
-};
+}
 
 const ListScreen: React.FC<IListScreen> = ({ goToCharacter }) => {
   return (

@@ -3,4 +3,4 @@ import { ParamListBase } from '@react-navigation/native';
 
 export interface INavigation{
   navigation: NativeStackNavigationProp<ParamListBase>;
-};
+}
