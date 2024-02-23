@@ -11,7 +11,7 @@ const initialState: IPeopleListReducer = {
   count: 0,
 };
 
-const listReducer = createReducer<IPeopleListReducer>({
+const peopleListReducer = createReducer<IPeopleListReducer>({
   [actions.setPeopleListAction.getType()]: (
     state: IPeopleListReducer,
     payload: ISetPeopleListAction
@@ -33,4 +33,4 @@ const listReducer = createReducer<IPeopleListReducer>({
   }),
 }, initialState);
 
-export default listReducer;
+export default peopleListReducer;

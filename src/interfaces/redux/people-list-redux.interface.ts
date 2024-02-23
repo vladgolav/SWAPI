@@ -19,12 +19,12 @@ export interface IPeople {
   vehicles: string[];
 }
 
-export type PeopleArray = IPeople[];
+export type PeopleArrayType = IPeople[];
 
 // reducer
 
 export interface IPeopleListReducer {
-  list: PeopleArray;
+  list: PeopleArrayType;
   count: number;
   currentPage: number;
 }
@@ -37,7 +37,7 @@ export interface IGetPeopleListAction {
 }
 
 export interface ISetPeopleListAction {
-  list: PeopleArray,
+  list: PeopleArrayType,
   count?: number,
 }
 
@@ -47,5 +47,5 @@ export interface IGetPeopleListResponse {
   count: number;
   next: string | null;
   previous: string | null;
-  result: PeopleArray;
+  results: PeopleArrayType;
 }

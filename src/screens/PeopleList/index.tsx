@@ -12,7 +12,7 @@ const PeopleList: React.FC<INavigation> = ({ navigation }) => {
   const list = useSelector(peopleListSelector);
 
   const dispatch = useDispatch();
-
+  console.log('list', list)
   useLayoutEffect(() => {
     getList(1, 'getPeopleList');
   }, []);
@@ -37,6 +37,7 @@ const PeopleList: React.FC<INavigation> = ({ navigation }) => {
     <ListScreen
       goToCharacter={goToCharacter}
       onRefreshList={onRefreshList}
+      list={list}
     />
   );
 }

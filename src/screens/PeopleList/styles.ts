@@ -7,4 +7,7 @@ export default StyleSheet.create({
     backgroundColor: COLORS.white,
     flex: 1,
   },
+  flatlist: {
+    flex: 1,
+  },
 });
