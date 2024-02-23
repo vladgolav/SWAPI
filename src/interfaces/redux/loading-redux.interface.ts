@@ -1,8 +1,8 @@
 export enum LoadingEnum { 
-  'getList' = 'getList',
-  'refreshList' = 'refreshList',
-  'loadMoreList' = 'loadMoreList',
-  'getCharacterInfo' = 'getCharacterInfo',
+  'getPeopleList' = 'getPeopleList',
+  'refreshPeopleList' = 'refreshPeopleList',
+  'loadMorePeopleList' = 'loadMorePeopleList',
+  'getPersonInfo' = 'getPersonInfo',
 }
 
 export type LoadingType = keyof typeof LoadingEnum;

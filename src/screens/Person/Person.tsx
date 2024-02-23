@@ -5,11 +5,11 @@ import Container from 'src/components/Container';
 
 import styles from './styles';
 
-interface ICharacterScreen {
+interface IPersonScreen {
   goBack: () => void;
 }
 
-const CharacterScreen: React.FC<ICharacterScreen> = ({ goBack }) => {
+const PersonScreen: React.FC<IPersonScreen> = ({ goBack }) => {
   return (
     <Container containerStyle={styles.container}>
       <Text onPress={goBack}>Go back</Text>
@@ -17,4 +17,4 @@ const CharacterScreen: React.FC<ICharacterScreen> = ({ goBack }) => {
   );
 };
 
-export default CharacterScreen;
+export default PersonScreen;

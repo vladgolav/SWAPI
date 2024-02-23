@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
-import list from './list';
+import peopleList from './peopleList';
 import loading from './loading';
 
 const reducer = combineReducers({
-  list,
+  peopleList,
   loading,
 });
 

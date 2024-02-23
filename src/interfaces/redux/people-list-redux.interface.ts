@@ -23,7 +23,7 @@ export type PeopleArray = IPeople[];
 
 // reducer
 
-export interface IListReducer {
+export interface IPeopleListReducer {
   list: PeopleArray;
   count: number;
   currentPage: number;
@@ -31,19 +31,19 @@ export interface IListReducer {
 
 // actions
 
-export interface IGetListAction {
+export interface IGetPeopleListAction {
   page: number;
   loading: LoadingType;
 }
 
-export interface ISetListAction {
+export interface ISetPeopleListAction {
   list: PeopleArray,
   count?: number,
 }
 
 // responses
 
-export interface IGetListResponse {
+export interface IGetPeopleListResponse {
   count: number;
   next: string | null;
   previous: string | null;

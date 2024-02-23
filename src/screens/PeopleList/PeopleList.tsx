@@ -6,20 +6,20 @@ import Header from 'src/components/Header';
 
 import styles from './styles';
 
-interface IListScreen {
+interface IPeopleListScreen {
   goToCharacter: () => void;
   onRefreshList: () => void;
 }
 
-const ListScreen: React.FC<IListScreen> = ({ goToCharacter }) => {
+const PeopleListScreen: React.FC<IPeopleListScreen> = ({ goToCharacter }) => {
   return (
     <Container containerStyle={styles.container}>
       <Header
-        title='Characters'
+        title='People'
       />
       <Text onPress={goToCharacter}>Go next</Text>
     </Container>
   );
 };
 
-export default ListScreen;
+export default PeopleListScreen;

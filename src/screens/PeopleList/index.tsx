@@ -3,34 +3,34 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { INavigation } from 'src/interfaces/navigation.interface';
 
-import { listSelector } from 'src/redux/selectors';
+import { peopleListSelector } from 'src/redux/selectors';
 import * as actions from 'src/redux/actions';
-import ListScreen from './List';
+import ListScreen from './PeopleList';
 import { LoadingType } from 'src/interfaces/redux/loading-redux.interface';
 
-const List: React.FC<INavigation> = ({ navigation }) => {
-  const list = useSelector(listSelector);
+const PeopleList: React.FC<INavigation> = ({ navigation }) => {
+  const list = useSelector(peopleListSelector);
 
   const dispatch = useDispatch();
 
   useLayoutEffect(() => {
-    getList(1, 'getList');
+    getList(1, 'getPeopleList');
   }, []);
 
   const getList = (page: number, loading: LoadingType) => {
-    dispatch(actions.getListAction({ page, loading }));
+    dispatch(actions.getPeopleListAction({ page, loading }));
   }
   
   const goToCharacter = () => {
-    navigation.navigate('Character');
+    navigation.navigate('Person');
   };
 
   const onRefreshList = () => {
-    getList(1, 'refreshList');
+    getList(1, 'refreshPeopleList');
   };
 
   const onLoadMore = () => {
-    getList(1, 'refreshList');
+    getList(1, 'refreshPeopleList');
   };
   
   return (
@@ -41,4 +41,4 @@ const List: React.FC<INavigation> = ({ navigation }) => {
   );
 }
 
-export default List;
+export default PeopleList;

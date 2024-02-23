@@ -2,18 +2,18 @@ import React from 'react';
 
 import { INavigation } from 'src/interfaces/navigation.interface';
 
-import CharacterScreen from './Character';
+import PersonScreen from './Person';
 
-const Character: React.FC<INavigation> = ({ navigation }) => {
+const Person: React.FC<INavigation> = ({ navigation }) => {
   const goBack = () => {
     navigation.goBack();
   };
   
   return (
-    <CharacterScreen
+    <PersonScreen
       goBack={goBack}
     />
   );
 };
 
-export default Character;
+export default Person;

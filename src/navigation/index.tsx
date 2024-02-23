@@ -2,8 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import List from 'src/screens/List';
-import Character from 'src/screens/Character';
+import PeopleList from 'src/screens/PeopleList';
+import Person from 'src/screens/Person';
 
 const MainStack = createNativeStackNavigator();
 
@@ -14,9 +14,9 @@ const optionsWithoutHeader = {
 const RootNavigation = () => (
   <NavigationContainer
   >
-    <MainStack.Navigator initialRouteName='List'>
-      <MainStack.Screen name="List" component={List} options={optionsWithoutHeader} />
-      <MainStack.Screen name="Character" component={Character} options={optionsWithoutHeader} />
+    <MainStack.Navigator initialRouteName='PeopleList'>
+      <MainStack.Screen name="PeopleList" component={PeopleList} options={optionsWithoutHeader} />
+      <MainStack.Screen name="Person" component={Person} options={optionsWithoutHeader} />
     </MainStack.Navigator>
   </NavigationContainer>
 );

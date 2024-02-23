@@ -6,28 +6,31 @@ import {
   call,
 } from 'redux-saga/effects';
 
-import { IGetListAction, IGetListResponse } from 'src/interfaces/redux/list-redux.interface';
+import {
+  IGetPeopleListAction,
+  IGetPeopleListResponse
+} from 'src/interfaces/redux/people-list-redux.interface';
 
 import * as ENDPOINTS from 'src/constants/endpoints';
 import * as actions from 'src/redux/actions';
 import * as api from 'src/utils/api';
 
-function* getList({ payload } : { payload: IGetListAction }): Generator {
+function* getList({ payload } : { payload: IGetPeopleListAction }): Generator {
   try {
     yield put(actions.setLoading({ [payload.loading]: true }));
 
     const result = (
-      yield call(api.get, ENDPOINTS.getList(payload.page))
-    ) as AxiosResponse<IGetListResponse>;
+      yield call(api.get, ENDPOINTS.getPeopleList(payload.page))
+    ) as AxiosResponse<IGetPeopleListResponse>;
     
     if (result.status === 200) {
       if (payload.page === 1) {
-        yield put(actions.setListAction({
+        yield put(actions.setPeopleListAction({
           list: result.data.result,
           count: result.data.count
         }));
       } else {
-        yield put(actions.setMoreListAction({
+        yield put(actions.setMorePeopleListAction({
           list: result.data.result
         }));
       }
@@ -41,6 +44,6 @@ function* getList({ payload } : { payload: IGetListAction }): Generator {
 
 export default function* listSaga() {
   yield all([
-    takeLatest(actions.getListAction, getList),
+    takeLatest(actions.getPeopleListAction, getList),
   ]);
 }

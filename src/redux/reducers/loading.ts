@@ -3,10 +3,10 @@ import { ILoadingReducer, ISetLoadingAction } from 'src/interfaces/redux/loading
 import * as actions from 'src/redux/actions';
 
 const initialState: ILoadingReducer = {
-  getList: false,
-  refreshList: false,
-  loadMoreList: false,
-  getCharacterInfo: false,
+  getPeopleList: false,
+  refreshPeopleList: false,
+  loadMorePeopleList: false,
+  getPersonInfo: false,
 };
 
 const loadingReducer = createReducer<ILoadingReducer>({
