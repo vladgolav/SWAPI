@@ -28,9 +28,9 @@ export const reduxStorage: Storage = {
 }
 
 const persistConfig = {
-  key: 'NFTContentAuth',
+  key: 'SWAPI',
   storage: reduxStorage,
-  whitelist: ['auth', 'app', 'user', 'nfts'],
+  whitelist: ['list'],
   blackList: [],
 };
 

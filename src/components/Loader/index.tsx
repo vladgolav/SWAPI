@@ -8,6 +8,7 @@ import styles from './styles';
 
 const Loader = () => {
   if (true) return null;
+  
   return (
     <View style={styles.container}>
       <ActivityIndicator

@@ -1,1 +1,1 @@
-export const getList = (page: number): string => `people/?page=${page}`;
+export const getList = (page: number): string => `https://swapi.dev/api/people/?page=${page}`;
