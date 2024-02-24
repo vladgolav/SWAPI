@@ -5,10 +5,10 @@ import styles from './styles';
 interface IHeader {
   goBack?: () => void;
   title: string;
-  renderRightCompoent?: React.ReactNode;
+  renderRightComponent?: React.ReactNode;
 }
 
-const Header: React.FC<IHeader> = ({ goBack, title, renderRightCompoent }) => {
+const Header: React.FC<IHeader> = ({ goBack, title, renderRightComponent }) => {
   const renderLeft = () => {
     if (goBack) {
       <TouchableOpacity>
@@ -20,8 +20,8 @@ const Header: React.FC<IHeader> = ({ goBack, title, renderRightCompoent }) => {
   };
 
   const renderRight = () => {
-    if (renderRightCompoent) {
-      return renderRightCompoent;
+    if (renderRightComponent) {
+      return renderRightComponent;
     }
 
     return null;

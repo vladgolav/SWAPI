@@ -4,6 +4,9 @@ import { IRootState } from "..";
 import { LoadingType } from "src/interfaces/redux/loading-redux.interface";
 
 export const loadingSelector = createSelector(
-  (state: IRootState, key: LoadingType) => state.loading[key],
-  (value) => value
+  [
+    (state: IRootState) => state.loading,
+    (state, key: LoadingType) => key,
+  ],
+  (value, key) => value[key],
 );

@@ -1,6 +1,6 @@
 import { LoadingType } from "./loading-redux.interface";
 
-export interface IPeople {
+export interface IPerson {
   name: string;
   birth_year: string;
   eye_color: string;
@@ -19,7 +19,7 @@ export interface IPeople {
   vehicles: string[];
 }
 
-export type PeopleArrayType = IPeople[];
+export type PeopleArrayType = IPerson[];
 
 // reducer
 

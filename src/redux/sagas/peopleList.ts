@@ -18,7 +18,6 @@ import * as api from 'src/utils/api';
 function* getPeopleList({ payload } : { payload: IGetPeopleListAction }): Generator {
   try {
     yield put(actions.setLoading({ [payload.loading]: true }));
-
     const result = (
       yield call(api.get, ENDPOINTS.getPeopleList(payload.page))
     ) as AxiosResponse<IGetPeopleListResponse>;
@@ -30,11 +29,11 @@ function* getPeopleList({ payload } : { payload: IGetPeopleListAction }): Genera
         }));
       } else {
         yield put(actions.setMorePeopleListAction({
-          list: result.data.result
+          list: result.data.results
         }));
       }
     }
-
+    yield put(actions.setCurrentPageAction(payload.page));
     yield put(actions.setLoading({ [payload.loading]: false }));
   } catch (e: any) {
     yield put(actions.setLoading({ [payload.loading]: false }));

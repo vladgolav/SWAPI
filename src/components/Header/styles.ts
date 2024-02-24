@@ -19,8 +19,8 @@ export default StyleSheet.create({
       width: 0,
       height: 30,
     },
-    shadowOpacity: 0.09,
-    shadowRadius: 20,
+    shadowOpacity: 0.05,
+    shadowRadius: 10,
     width: '100%',
   },
   leftPartContainer: {
@@ -32,7 +32,7 @@ export default StyleSheet.create({
   titleText: {
     color: COLORS.lightBlack,
     flex: 1,
-    fontSize: moderateScale(16),
+    fontSize: moderateScale(18),
     fontWeight: '500',
     textAlign: 'center',
   },
