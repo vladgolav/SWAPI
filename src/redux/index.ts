@@ -1,7 +1,7 @@
 import { Storage } from 'redux-persist';
 import { MMKV } from "react-native-mmkv";
 import { configureStore } from '@reduxjs/toolkit'
-import logger from 'redux-logger'
+// import logger from 'redux-logger'
 import createSagaMiddleware from 'redux-saga';
 import { persistStore, persistReducer } from 'redux-persist';
 
@@ -44,7 +44,7 @@ const store = configureStore({
   getDefaultMiddleware({
     thunk: false,
     serializableCheck: false,
-  }).concat([sagaMiddleware, logger]),
+  }).concat([sagaMiddleware /* , logger */ ]),
 });
 
 sagaMiddleware.run(rootSaga);
