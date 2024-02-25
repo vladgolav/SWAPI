@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import * as COLORS from 'src/constants/colors';
 
 import styles from './styles';
-import { moderateScale, verticalScale } from 'react-native-size-matters';
+import { verticalScale } from 'react-native-size-matters';
 
 interface IHeader {
   goBack?: () => void;
