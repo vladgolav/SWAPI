@@ -67,6 +67,7 @@ const PeopleList: React.FC<INavigation> = ({ navigation }) => {
   }
   
   const goToPerson = (item: IPerson) => {
+    dispatch(actions.setCurrentPersonAction(item));
     navigation.navigate('Person');
   };
 

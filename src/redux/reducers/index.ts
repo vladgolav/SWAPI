@@ -6,6 +6,7 @@ import favorite from './favorite';
 import films from './films';
 import planets from './planets';
 import species from './species';
+import person from './person';
 
 const reducer = combineReducers({
   peopleList,
@@ -14,6 +15,7 @@ const reducer = combineReducers({
   films,
   planets,
   species,
+  person,
 });
 
 export default reducer;

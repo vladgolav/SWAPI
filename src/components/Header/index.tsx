@@ -1,6 +1,11 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
+import * as COLORS from 'src/constants/colors';
+
 import styles from './styles';
+import { moderateScale } from 'react-native-size-matters';
 
 interface IHeader {
   goBack?: () => void;
@@ -11,9 +16,15 @@ interface IHeader {
 const Header: React.FC<IHeader> = ({ goBack, title, renderRightComponent }) => {
   const renderLeft = () => {
     if (goBack) {
-      <TouchableOpacity>
-
-      </TouchableOpacity>
+      return (
+        <TouchableOpacity onPress={goBack} hitSlop={15}>
+          <Icon
+            name="arrow-back-ios"
+            size={moderateScale(30)}
+            color={COLORS.lightBlack}
+          />
+        </TouchableOpacity>
+      );
     }
 
     return null;
