@@ -44,7 +44,7 @@ const PeopleListScreen: React.FC<IPeopleListScreen> = ({
         hitSlop={15}
         onPress={onClearFavoriteList}
       >
-        <Text style={styles.clearText}>Clear</Text>
+        <Text style={styles.clearText}>Clear Fans</Text>
       </TouchableOpacity>
     );
   }, []);

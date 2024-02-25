@@ -24,10 +24,10 @@ export default StyleSheet.create({
     width: '100%',
   },
   leftPartContainer: {
-    flex: 0.2
+    flex: 1
   },
   rightPartContainer: {
-    flex: 0.2
+    flex: 1
   },
   titleText: {
     color: COLORS.lightBlack,
