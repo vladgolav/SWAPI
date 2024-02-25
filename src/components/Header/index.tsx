@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import * as COLORS from 'src/constants/colors';
 
 import styles from './styles';
-import { moderateScale } from 'react-native-size-matters';
+import { moderateScale, verticalScale } from 'react-native-size-matters';
 
 interface IHeader {
   goBack?: () => void;
@@ -20,7 +20,7 @@ const Header: React.FC<IHeader> = ({ goBack, title, renderRightComponent }) => {
         <TouchableOpacity onPress={goBack} hitSlop={15}>
           <Icon
             name="arrow-back-ios"
-            size={moderateScale(30)}
+            size={verticalScale(25)}
             color={COLORS.lightBlack}
           />
         </TouchableOpacity>

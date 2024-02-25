@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { moderateScale } from "react-native-size-matters";
+import { moderateScale, verticalScale } from "react-native-size-matters";
 
 import * as COLORS from "src/constants/colors";
 
@@ -9,7 +9,7 @@ export default StyleSheet.create({
   },
   clearText: {
     color: COLORS.red,
-    fontSize: moderateScale(15),
+    fontSize: verticalScale(15),
     fontWeight: '400',
   },
   container: {

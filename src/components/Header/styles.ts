@@ -24,15 +24,15 @@ export default StyleSheet.create({
     width: '100%',
   },
   leftPartContainer: {
-    flex: 1
+    flex: 0.8
   },
   rightPartContainer: {
-    flex: 1
+    flex: 0.8
   },
   titleText: {
     color: COLORS.lightBlack,
     flex: 1,
-    fontSize: moderateScale(18),
+    fontSize: verticalScale(18),
     fontWeight: '500',
     textAlign: 'center',
   },

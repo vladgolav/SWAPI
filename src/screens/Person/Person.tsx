@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { TouchableOpacity, ScrollView, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { moderateScale } from 'react-native-size-matters';
+import { verticalScale } from 'react-native-size-matters';
 import dayjs from 'dayjs';
 
 import { IPersonSelector } from 'src/interfaces/redux/person-redux.interface';
@@ -44,7 +44,7 @@ const PersonScreen: React.FC<IPersonScreen> = ({
           >
             <Icon
               name={isInFavorite ? "favorite" : "favorite-border"}
-              size={moderateScale(30)}
+              size={verticalScale(25)}
               color={COLORS.red}
             />
           </TouchableOpacity>
