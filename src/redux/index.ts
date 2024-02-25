@@ -32,7 +32,7 @@ export const reduxStorage: Storage = {
 const persistConfig = {
   key: 'SWAPI',
   storage: reduxStorage,
-  whitelist: ['peopleList'],
+  whitelist: ['peopleList', 'favorite', 'films', 'planets', 'species'],
   blackList: [],
 };
 

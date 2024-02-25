@@ -15,7 +15,7 @@ import * as ENDPOINTS from 'src/constants/endpoints';
 import * as actions from 'src/redux/actions';
 import * as api from 'src/utils/api';
 
-function* getPeopleList({ payload } : { payload: IGetPeopleListAction }): Generator {
+function* getPeopleListSaga({ payload } : { payload: IGetPeopleListAction }): Generator {
   try {
     yield put(actions.setLoading({ [payload.loading]: true }));
     const result = (
@@ -42,6 +42,6 @@ function* getPeopleList({ payload } : { payload: IGetPeopleListAction }): Genera
 
 export default function* peopleListSaga() {
   yield all([
-    takeLatest(actions.getPeopleListAction, getPeopleList),
+    takeLatest(actions.getPeopleListAction, getPeopleListSaga),
   ]);
 }

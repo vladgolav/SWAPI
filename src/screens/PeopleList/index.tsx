@@ -1,5 +1,7 @@
 import React, { useLayoutEffect, createContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Action } from '@reduxjs/toolkit';
+import dayjs from 'dayjs';
 
 import { INavigation } from 'src/interfaces/navigation.interface';
 import { LoadingType } from 'src/interfaces/redux/loading-redux.interface';
@@ -9,9 +11,18 @@ import { IPerson } from 'src/interfaces/redux/people-list-redux.interface';
 import * as actions from 'src/redux/actions';
 
 import ListScreen from './PeopleList';
-import { countSelector, currentPageSelector, peopleListSelector } from 'src/redux/selectors';
-import { loadingSelector } from 'src/redux/selectors/loading';
-import { favoriteListSelector, favoriteSplitedListsSelector } from 'src/redux/selectors/favorite';
+
+import {
+  countSelector,
+  currentPageSelector,
+  lastUpdatedFilmsTimeSelector,
+  lastUpdatedPlanetsTimeSelector,
+  lastUpdatedSpeciesTimeSelector,
+  peopleListSelector,
+  loadingSelector,
+  favoriteListSelector,
+  favoriteSplitedListsSelector,
+} from 'src/redux/selectors';
 import { IRootState } from 'src/redux';
 
 export const PeopleListContext = createContext<IPeopleListContext | null>(null);
@@ -29,7 +40,23 @@ const PeopleList: React.FC<INavigation> = ({ navigation }) => {
     (state: IRootState) => loadingSelector(state, 'loadMorePeopleList')
   );
 
+  const lastUpdatedFilmsTime = useSelector(lastUpdatedFilmsTimeSelector);
+  const lastUpdatedPlanetsTime = useSelector(lastUpdatedPlanetsTimeSelector);
+  const lastUpdatedSpeciesTime = useSelector(lastUpdatedSpeciesTimeSelector);
+
   const dispatch = useDispatch();
+
+  const updatingData = (action: Action, lastUpdatedDate: Date | null) => {
+    if (!lastUpdatedDate || dayjs().diff(lastUpdatedDate, 'days') > 3) {
+      dispatch(action);
+    }
+  };
+
+  useLayoutEffect(() => {
+    updatingData(actions.getFilmsAction(), lastUpdatedFilmsTime);
+    updatingData(actions.getPlanetsAction(), lastUpdatedPlanetsTime);
+    updatingData(actions.getSpeciesAction(), lastUpdatedSpeciesTime);
+  }, []);
 
   useLayoutEffect(() => {
     getList(1, 'getPeopleList');
